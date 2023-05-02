@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "noImplicitAny": true
+    }
+}
+// tsconfig 파일을 설정하여 ts파일을 js파일로 컴파일시 여러 옵션을 추가할수잇따.
+// https://www.typescriptlang.org/tsconfig ts 공식문서의 tsconfig 파일에 들어가는 여러 옵션들이 설명되어있다.
