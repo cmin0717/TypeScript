@@ -13,6 +13,7 @@ let arr1: number[] = [4,5,6]  // 이렇게도 선언할수 있다.
 let str_arr: string[] = ['Capt', 'Thor', 'Hulk'] // 문자형 배열도 선언가능
 // let str_arr1: Array<string> = ['Capt', 'Thor', 'Hulk', 10] // 선언은 문자형 배열로 했는데 숫자형을 넣으면 오류를 발생시킨다.
 let arr2: any[] = [1, 'hi', true] // 각종 타입이 들어가는 배열이라면 특정 타입 말고 any를 넣어준다.
+// any라는 타입은 모든 타입이 들어갈수있다
 
 // ts 튜플 선언 / 튜플 : 튜플은 배열의 길이가 고정되고 각 요소의 타입이 지정되어 있는 배열 형식을 의미합니다.
 let address: [string, number] = ['Cpat', 100] // 지정되 배열에 무슨무슨 타입이 들어가나 정의해준다.

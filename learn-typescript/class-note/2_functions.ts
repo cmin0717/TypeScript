@@ -24,7 +24,7 @@ const tt = (a:string, b:number[]):string => { // a는 문자형, b는 숫자가 
 }
 
 
-// 함수의 옵셔널 파라미터(선택적 파리미터)
+// 함수의 옵셔널 파라미터(선택적 파리미터)(?)
 const log = (a:string, b?:string) => { // a,b라는 파라미터를 받는데 a는 필수로 받아야하지만 ?가 있는 b는 있으면 받고 없으면 안받는다.
     return a+b
 }
