@@ -10,11 +10,17 @@ interface Contact {
   phones: PhoneNumberDictionary;
 }
 
+// PhoneType 매개변수에 들어오는값을 특정 으로 제한하기위해 이넘을 선언
+enum PhoneType {
+  office = 'office',
+  home = 'home',
+  studio = 'studio',
+}
+
 // api
-// TODO: 아래 함수의 반환 타입을 지정해보세요.
-function fetchContacts() {
-  // TODO: 아래 변수의 타입을 지정해보세요.
-  const contacts = [
+// 해당 함수는 promise타입으로 반환하면서 안에는 contact 인터페이스형태로 구성되있기에 promise제네릭에 contact타입을 넣어주어야한다.
+function fetchContacts(): Promise<Contact[]> {
+  const contacts: Contact[] = [
     {
       name: 'Tony',
       address: 'Malibu',
@@ -49,6 +55,7 @@ function fetchContacts() {
       },
     },
   ];
+  // 반환값을 promise형태로 넘기는데 settimeout를 이용하여 2초 후에 반환하게 된다.
   return new Promise(resolve => {
     setTimeout(() => resolve(contacts), 2000);
   });
@@ -56,43 +63,49 @@ function fetchContacts() {
 
 // main
 class AddressBook {
-  // TODO: 아래 변수의 타입을 지정해보세요.
-  contacts = [];
+  contacts: Contact[] = [];
 
   constructor() {
+    // 해당 클래스의 매서드 선언
     this.fetchData();
   }
 
-  fetchData() {
+  // 클래스의 매소드들
+
+  // fetchData 매서드는 리턴값이 없기에 void를 리턴타입으로 정의
+  // fetchData는 fetchContacts에서 받아온 contacts를 클래스안에 있는 contacts로 선언하는 작업이다.
+  fetchData(): void {
     fetchContacts().then(response => {
       this.contacts = response;
     });
   }
 
-  /* TODO: 아래 함수들의 파라미터 타입과 반환 타입을 지정해보세요 */
-  findContactByName(name) {
+  findContactByName(name: string): Contact[] {
+    // 배열을 filter를 하기에 리턴값은 배열로 나오게 된다. contacts안에는 contact타입으로 존재하기 contact[] 리턴타입으로 주었다.
     return this.contacts.filter(contact => contact.name === name);
   }
 
-  findContactByAddress(address) {
+  findContactByAddress(address: string): Contact[] {
     return this.contacts.filter(contact => contact.address === address);
   }
 
-  findContactByPhone(phoneNumber, phoneType: string) {
+  // phonetype을 이넘을 사용하여 특정값으로 정의한다.
+  // 이렇게 하면 매서드 호출시 findContactByPhone(PhoneType.home) 등으로 호출하게 된다.
+  findContactByPhone(phoneNumber: number, phoneType: PhoneType): Contact[] {
     return this.contacts.filter(
       contact => contact.phones[phoneType].num === phoneNumber
     );
   }
 
-  addContact(contact) {
+  addContact(contact: Contact): void {
     this.contacts.push(contact);
   }
 
-  displayListByName() {
+  displayListByName(): string[] {
     return this.contacts.map(contact => contact.name);
   }
 
-  displayListByAddress() {
+  displayListByAddress(): string[] {
     return this.contacts.map(contact => contact.address);
   }
   /* ------------------------------------------------ */

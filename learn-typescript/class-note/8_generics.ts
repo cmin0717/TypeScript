@@ -118,3 +118,14 @@ const getItemOption = <T extends keyof ShopItems> (itemoption : T) => {
 // getItemOption(10) // 해당값들은 확장된애들에 없기에 들어갈수없다.
 // getItemOption([])
 getItemOption("name") // ctrl + space를 누르면 어떤값들만 넣을수 있는지 확인할수있따.
+
+
+// Promise를 리턴할때
+const fetchitems = (): Promise<string[]> => { 
+    let items = ['a','b','c']
+    return new Promise((resolve) => {
+        resolve(items)
+    })
+}
+// promise를 리턴할때는 promise타입으로 정의해주어야한다.
+// promise타입은 기본적으로 제네릭으로 구성됨으로 어떤 타입이 promise안에 있는지 제네릭을 사용하여 반환해주어야한다.

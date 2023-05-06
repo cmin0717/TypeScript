@@ -33,8 +33,8 @@ interface StringArray {
     [i:number]:string // 각 인덱스에 해당하는 값이 스티링형태인 인터페이스 // []는 인덱싱을 의미하는 것이다. []안에는 하나의 매개변수만 넣을수있따.
                                                                         // string, number, symbol형태의 타입만 인덱스에 넣을수있다.
 }
-const arr1:StringArray = ['a','b','c']
-arr1[2] = 'f'
+const arr3:StringArray = ['a','b','c']
+arr3[2] = 'f'
 
 
 // 딕셔너리 인터페이스

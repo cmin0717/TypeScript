@@ -1,21 +1,21 @@
 // 인터페이스
-interface info {
+interface info1 {
     name:string,
     age:number
 }
 
 // 타입 별칭
-type info1 = {
+type info2 = {
     name:string,
     age: number
 }
 
-const pp:info = { // 인터페이스로 구성한 info에 마우스를 올리면 해당값이 어떻게 구성되어있는지 나오지 않는다.
+const pp:info1 = { // 인터페이스로 구성한 info에 마우스를 올리면 해당값이 어떻게 구성되어있는지 나오지 않는다.
     name:'pp1',
     age: 20
 }
 
-const pp2:info1 = { // 타입 별칭으로 구성한 info1에 마우스를 올리면 해당 값이 어떻게 구성되는지 나온다.
+const pp2:info2 = { // 타입 별칭으로 구성한 info1에 마우스를 올리면 해당 값이 어떻게 구성되는지 나온다.
     name:'pp2',
     age:30
 }
