@@ -1,23 +1,26 @@
-interface PhoneNumberDictionary {
-  [phone: string]: {
-    num: number;
-  };
-}
+// 인터페이스를 모듈화 해서 불러왔다.
+import { Contact, PhoneType } from './types';
 
-interface Contact {
-  name: string;
-  address: string;
-  phones: PhoneNumberDictionary;
-}
+// interface PhoneNumberDictionary {
+//   [phone: string]: {
+//     num: number;
+//   };
+// }
 
-// PhoneType 매개변수에 들어오는값을 특정 으로 제한하기위해 이넘을 선언
-enum PhoneType {
-  office = 'office',
-  home = 'home',
-  studio = 'studio',
-}
+// interface Contact {
+//   name: string;
+//   address: string;
+//   phones: PhoneNumberDictionary;
+// }
 
-// api
+// // PhoneType 매개변수에 들어오는값을 특정 으로 제한하기위해 이넘을 선언
+// enum PhoneType {
+//   office = 'office',
+//   home = 'home',
+//   studio = 'studio',
+// }
+
+// API
 // 해당 함수는 promise타입으로 반환하면서 안에는 contact 인터페이스형태로 구성되있기에 promise제네릭에 contact타입을 넣어주어야한다.
 function fetchContacts(): Promise<Contact[]> {
   const contacts: Contact[] = [
