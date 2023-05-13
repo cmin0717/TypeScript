@@ -1,17 +1,17 @@
 // 인터페이스 선언 // User라는 인터페이스는 객체이면서 age,name를 각각 number, string으로 가지고있는다.
-interface User {
+interface User1 {
     age: number,
     name: string
 }
 
 // 변수에 인터페이스 적용 // seho라는 변수는 User라는 인터페이스 형태를따른다.
-let seho: User = {
+let seho: User1 = {
     name: 'seho',
     age:33
 }
 
 // 함수에 인터페이스 적용
-const getuser = (user: User):User => {
+const getuser = (user: User1):User1 => {
     return user
 }
 //getuser('1') // 해당 인터페이스로 매개변수를 받으면 그 인터페이스가 아닌 다른값은 넣지못한다. 

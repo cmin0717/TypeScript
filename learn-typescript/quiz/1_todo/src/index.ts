@@ -6,14 +6,13 @@
 // }
 // 인터페이스 (이 방벙을 더 많이 사용한다.)
 interface Todo {
-  id: number,
-  title: string,
-  done: boolean
+  id: number;
+  title: string;
+  done: boolean;
 }
 
-
 // let todoItems:{id:number, title:string, done:boolean}[]
-let todoItems: Todo[] // 위에서 해당 타입을 미리 정의하여 간편하게 코드에 적용시킬수있다.
+let todoItems: Todo[]; // 위에서 해당 타입을 미리 정의하여 간편하게 코드에 적용시킬수있다.
 
 // api
 function fetchTodoItems(): Todo[] {
@@ -31,21 +30,22 @@ function fetchTodos(): object[] {
   return todos;
 }
 
-function addTodo(todo:Todo):void { // 함수의 반환값이 없다면 반환 타입으로 void로 넣어주어야한다.
+// 함수의 반환값이 없다면 반환 타입으로 void로 넣어주어야한다.
+function addTodo(todo: Todo): void {
   todoItems.push(todo);
 }
 
-function deleteTodo(index:number): void {
+function deleteTodo(index: number): void {
   todoItems.splice(index, 1);
 }
 
-function completeTodo(index:number, todo: Todo):void {
+function completeTodo(index: number, todo: Todo): void {
   todo.done = true;
   todoItems.splice(index, 1, todo);
 }
 
 // business logic
-function logFirstTodo():object {
+function logFirstTodo(): object {
   return todoItems[0];
 }
 
@@ -54,22 +54,22 @@ function showCompleted(): object[] {
 }
 
 // TODO: 아래 함수의 내용을 채워보세요. 아래 함수는 `addTodo()` 함수를 이용하여 2개의 새 할 일을 추가하는 함수입니다.
-function addTwoTodoItems():void {
+function addTwoTodoItems(): void {
   const item4 = {
-    id:4,
-    title:'item4',
-    done:false
-  }
-  addTodo(item4)
+    id: 4,
+    title: 'item4',
+    done: false,
+  };
+  addTodo(item4);
   addTodo({
-    id:5,
-    title:'item5',
-    done:false
-  })
+    id: 5,
+    title: 'item5',
+    done: false,
+  });
 }
 
 // NOTE: 유틸 함수
-function log():void {
+function log(): void {
   console.log(todoItems);
 }
 

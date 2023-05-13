@@ -12,7 +12,7 @@
  */
 
 // @ts-check // @ts-check를 사용하면 ts처럼 자바스크립트에서도 형을 지정하여 오류방지를 할수있다.
-const add = (a,b) => {
+const add4= (a,b) => {
     return a + b
 }
 // var r = add(10,'20') // jsdoc에서 정해주어도 ts처럼 잡아주진 못한다.

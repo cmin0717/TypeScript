@@ -1,5 +1,5 @@
 // 함수의 파라미터에 타입을 정의하는 방식
-function sum(a:number, b:number){ // 함수식으로 표현
+function sum7(a:number, b:number){ // 함수식으로 표현
     return a+b
 }
 const sum1 = (a:number, b:number) => { //화살표 함수로 표현
